@@ -13,7 +13,7 @@
         }
 
         .container {
-            max-width: 500px;
+            max-width: 550px;
             background: #ffffff;
             margin: 50px auto;
             padding: 30px;
@@ -24,7 +24,7 @@
         .logo {
             display: block;
             margin: 0 auto 20px;
-            max-width: 120px;
+            max-width: 130px;
         }
 
         h2 {
@@ -49,6 +49,10 @@
             font-size: 14px;
             transition: all 0.3s ease;
             resize: vertical;
+        }
+
+        select[multiple] {
+            height: auto;
         }
 
         input:focus, select:focus, textarea:focus {
@@ -81,7 +85,6 @@
         <h2>Hotel Mulya Booking Form</h2>
 
         <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
-
             <!-- Salesforce hidden fields -->
             <input type="hidden" name="oid" value="YOUR_SALESFORCE_ORG_ID">
             <input type="hidden" name="retURL" value="https://thankyou.example.com">
@@ -108,19 +111,31 @@
             <input type="date" id="check_out" name="Check_out_Date__c" required>
 
             <label for="product_interest">Product Interest</label>
-            <select id="product_interest" name="Product_Interest__c" multiple size="4" required>
-                <option value="Deluxe Room">Deluxe Room</option>
-                <option value="Suite Room">Suite Room</option>
-                <option value="Presidential Suite">Presidential Suite</option>
-                <option value="Meeting Room">Meeting Room</option>
+            <select id="product_interest" name="Product_Interest__c" multiple size="8" required>
+                <option>Ballroom</option>
+                <option>Resto Buffet</option>
+                <option>Meeting Room</option>
+                <option>Standard Room - No Breakfast</option>
+                <option>Standard Room - Breakfast</option>
+                <option>Deluxe Room - No Breakfast</option>
+                <option>Deluxe Room - Breakfast</option>
+                <option>Deluxe Room - No Breakfast - City View</option>
+                <option>Deluxe Room - Breakfast City View</option>
+                <option>Deluxe Room - No Breakfast - Park View</option>
+                <option>Deluxe Room - Breakfast - Park View</option>
+                <option>Family Room - Breakfast - Pool View</option>
+                <option>President Suite</option>
+                <option>Private VIP Room</option>
             </select>
 
             <label for="add_on_facility">Add-On Facility</label>
-            <select id="add_on_facility" name="Add_On_Facility__c" multiple size="4">
-                <option value="Airport Pickup">Airport Pickup</option>
-                <option value="Breakfast">Breakfast</option>
-                <option value="Spa Package">Spa Package</option>
-                <option value="Extra Bed">Extra Bed</option>
+            <select id="add_on_facility" name="Add_On_Facility__c" multiple size="6">
+                <option>Private Spa</option>
+                <option>Gym</option>
+                <option>Laundry All In</option>
+                <option>Bandung Open Trip</option>
+                <option>City Explore Trip</option>
+                <option>Jacuzzi</option>
             </select>
 
             <label for="any_request">Any Special Request</label>
