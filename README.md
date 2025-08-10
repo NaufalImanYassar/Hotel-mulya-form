@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -15,20 +14,42 @@
   }
   html,body{height:100%;margin:0;font-family:'Open Sans',sans-serif;background:var(--bg);color:var(--text)}
   .wrap{max-width:820px;margin:40px auto;padding:36px}
-  .card{background:#fff;border-radius:12px;padding:36px;box-shadow:0 6px 30px rgba(0,0,0,0.06)}
+  .card{
+    background:var(--bg); /* warna form diubah ke #fdf9f0 */
+    border-radius:12px;
+    padding:36px;
+    box-shadow:0 6px 30px rgba(0,0,0,0.06)
+  }
   .logo{display:block;margin:0 auto 18px;max-width:140px}
   h1{font-family:'Playfair Display',serif;font-size:40px;color:var(--gold);text-align:center;margin:6px 0 8px}
   p.lead{text-align:center;color:var(--muted);margin:0 0 26px}
   form{display:grid;grid-template-columns:1fr 1fr;gap:20px}
   label{display:block;font-weight:600;font-size:13px;margin-bottom:6px}
   input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="date"], select, textarea{
-    width:100%;padding:10px;border:none;border-bottom:1px solid #e6e6e6;background:transparent;font-size:14px;color:var(--text);
+    width:100%;
+    padding:10px;
+    border:none;
+    border-bottom:1px solid #e6e6e6;
+    background:transparent;
+    font-size:14px;
+    color:var(--text);
     box-sizing:border-box;
   }
   select[multiple]{min-height:110px}
   textarea{min-height:90px;resize:vertical;padding-top:10px}
   .full{grid-column:1 / 3}
-  .btn{grid-column:1 / 3;margin-top:6px;padding:14px;background:var(--gold);border:none;border-radius:8px;color:#fff;font-weight:700;font-size:16px;cursor:pointer}
+  .btn{
+    grid-column:1 / 3;
+    margin-top:6px;
+    padding:14px;
+    background:var(--gold);
+    border:none;
+    border-radius:8px;
+    color:#fff;
+    font-weight:700;
+    font-size:16px;
+    cursor:pointer
+  }
   .btn:hover{background:var(--gold-dark)}
   @media(max-width:720px){
     form{grid-template-columns:1fr}
@@ -39,19 +60,15 @@
 <body>
   <div class="wrap">
     <div class="card">
-      <!-- Logo: make sure file "hotel-mulya-logo.png" is in same folder or use absolute URL -->
       <img src="hotel-mulya-logo.png" alt="Hotel Mulya" class="logo">
 
       <h1>Discover the Best of Both Worlds</h1>
       <p class="lead">Share your vision with us — from elegant events to comfortable stays. Fill the form below and our team will contact you.</p>
 
-      <!-- Final form: action includes orgId param and hidden oid (OID must match your org) -->
       <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DNS00000IaWdK" method="POST">
-        <!-- required hidden fields -->
         <input type="hidden" name="oid" value="00DNS00000IaWdK">
         <input type="hidden" name="retURL" value="http://hotelmulya.com/thank-you">
 
-        <!-- Destination (Area_Sales__c) -->
         <div>
           <label for="destination">Destination *</label>
           <select id="destination" name="Area_Sales__c" required>
@@ -62,49 +79,41 @@
           </select>
         </div>
 
-        <!-- Event Name -->
         <div>
           <label for="event_name">Event Name *</label>
           <input id="event_name" name="Event_Name__c" type="text" required>
         </div>
 
-        <!-- First Name -->
         <div>
           <label for="first_name">First Name *</label>
           <input id="first_name" name="first_name" type="text" required>
         </div>
 
-        <!-- Last Name -->
         <div>
           <label for="last_name">Last Name *</label>
           <input id="last_name" name="last_name" type="text" required>
         </div>
 
-        <!-- Phone -->
         <div>
           <label for="phone">Phone Number *</label>
           <input id="phone" name="phone" type="tel" required>
         </div>
 
-        <!-- Email -->
         <div>
           <label for="email">Email Address *</label>
           <input id="email" name="email" type="email" required>
         </div>
 
-        <!-- Company -->
         <div>
           <label for="company">Company</label>
           <input id="company" name="company" type="text">
         </div>
 
-        <!-- Number of Attendees (mapped to Jumlah_Tamu__c in Salesforce) -->
         <div>
           <label for="attendees">Number of Attendees</label>
           <input id="attendees" name="Jumlah_Tamu__c" type="number" min="1">
         </div>
 
-        <!-- Product Interest (multi-select) -->
         <div class="full">
           <label for="product_interest">Product Interest</label>
           <select id="product_interest" name="Product_Interest__c" multiple>
@@ -125,7 +134,6 @@
           </select>
         </div>
 
-        <!-- Add-On Facility (multi-select) -->
         <div class="full">
           <label for="add_on">Add-On Facility</label>
           <select id="add_on" name="Add_On_Facility__c" multiple>
@@ -138,18 +146,16 @@
           </select>
         </div>
 
-        <!-- Check In / Check Out -->
         <div>
           <label for="check_in">Check In Date</label>
-          <!-- Use the API field name in name="" exactly as in your org. Update if needed -->
           <input id="check_in" name="Check_in_Date__c" type="date">
         </div>
+
         <div>
           <label for="check_out">Check Out Date</label>
           <input id="check_out" name="Check_out_Date__c" type="date">
         </div>
 
-        <!-- Any Special Request -->
         <div class="full">
           <label for="request">Any Special Request</label>
           <textarea id="request" name="Any_Request_Needed__c" placeholder="Write your request here..."></textarea>
