@@ -1,120 +1,118 @@
-<!--  Hotel Mulya Web-to-Lead Form tanpa reCAPTCHA  -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Hotel Mulya Booking Form</title>
-<style>
-    body {
-        background-color: #000;
-        color: #d4af37; /* warna emas */
-        font-family: Arial, sans-serif;
-        padding: 20px;
-    }
-    form {
-        background-color: rgba(0,0,0,0.8);
-        padding: 20px;
-        border: 1px solid #d4af37;
-        border-radius: 10px;
-        max-width: 500px;
-        margin: auto;
-    }
-    label {
-        display: block;
-        margin-top: 10px;
-    }
-    input, select {
-        width: 100%;
-        padding: 8px;
-        margin-top: 5px;
-        border-radius: 5px;
-        border: 1px solid #d4af37;
-        background-color: #111;
-        color: #fff;
-    }
-    input[type="submit"] {
-        background-color: #ad8505;
-        color: #000000;
-        font-weight: bold;
-        cursor: pointer;
-    }
-    input[type="submit"]:hover {
-        background-color: #b8860b;
-    }
-    .logo {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Mulya Booking Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            background: #ffffff;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 120px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: 600;
+            margin-top: 10px;
+            display: block;
+            color: #444;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            resize: vertical;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0,123,255,0.3);
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
 
-<div class="logo">
-    <img src="hotel-mulya-logo.png" alt="Hotel Mulya" width="120">
-</div>
+    <div class="container">
+        <img src="logo.png" alt="Hotel Mulya Logo" class="logo">
+        <h2>Hotel Mulya Booking Form</h2>
 
-<form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DNS00000IaWdK" method="POST">
-    <input type="hidden" name="oid" value="00DNS00000IaWdK">
-    <input type="hidden" name="retURL" value="http://hotelmulya.com/thank-you">
+        <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
 
-    <label for="first_name">First Name</label>
-    <input id="first_name" maxlength="40" name="first_name" type="text">
+            <!-- Ganti dengan Salesforce Org ID -->
+            <input type="hidden" name="oid" value="YOUR_SALESFORCE_ORG_ID">
+            <input type="hidden" name="retURL" value="https://thankyou.example.com">
 
-    <label for="last_name">Last Name</label>
-    <input id="last_name" maxlength="80" name="last_name" type="text">
+            <label for="first_name">First Name</label>
+            <input type="text" id="first_name" name="first_name" required>
 
-    <label for="email">Email</label>
-    <input id="email" maxlength="80" name="email" type="email">
+            <label for="last_name">Last Name</label>
+            <input type="text" id="last_name" name="last_name" required>
 
-    <label for="phone">Phone</label>
-    <input id="phone" maxlength="40" name="phone" type="text">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
 
-    <label for="company">Company</label>
-    <input id="company" maxlength="40" name="company" type="text">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone">
 
-    <label for="state">State/Province</label>
-    <input id="state" maxlength="20" name="state" type="text">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company">
 
-    <label>Check in Date</label>
-    <input id="00NNS00001imwfl" name="00NNS00001imwfl" type="date">
+            <label for="check_in">Check In Date</label>
+            <input type="date" id="check_in" name="Check_in_Date__c" required>
 
-    <label>Check out Date</label>
-    <input id="00NNS00001imPSL" name="00NNS00001imPSL" type="date">
+            <label for="check_out">Check Out Date</label>
+            <input type="date" id="check_out" name="Check_out_Date__c" required>
 
-    <label for="00NNS00001imrBR">Product Interest</label>
-    <select id="00NNS00001imrBR" multiple name="00NNS00001imrBR" title="Product Interest">
-        <option value="Standard Room - No Breakfast">Standard Room - No Breakfast</option>
-        <option value="Standard Room - Breakfast">Standard Room - Breakfast</option>
-        <option value="Deluxe Room - No Breakfast">Deluxe Room - No Breakfast</option>
-        <option value="Deluxe Room - Breakfast">Deluxe Room - Breakfast</option>
-        <option value="Deluxe Room - No Breakfast - City View">Deluxe Room - No Breakfast - City View</option>
-        <option value="Deluxe Room - Breakfast City View">Deluxe Room - Breakfast City View</option>
-        <option value="Deluxe Room - No Breakfast - Park View">Deluxe Room - No Breakfast - Park View</option>
-        <option value="Deluxe Room - Breakfast - Park View">Deluxe Room - Breakfast - Park View</option>
-        <option value="Family Room - Breakfast - Pool View">Family Room - Breakfast - Pool View</option>
-        <option value="President Suite">President Suite</option>
-        <option value="Private VIP Room">Private VIP Room</option>
-        <option value="Ballroom">Ballroom</option>
-        <option value="Resto Buffet">Resto Buffet</option>
-    </select>
+            <label for="any_request">Any Special Request</label>
+            <textarea id="any_request" name="Any_Request_Needed__c" rows="4" placeholder="Write your request here..."></textarea>
 
-    <label for="00NNS00001kJADZ">Add On Facility</label>
-    <select id="00NNS00001kJADZ" multiple name="00NNS00001kJADZ" title="Add On Facility">
-        <option value="Private Spa">Private Spa</option>
-        <option value="Gym">Gym</option>
-        <option value="Laundry All In">Laundry All In</option>
-        <option value="Bandung_Open_Trip">Bandung Open Trip</option>
-        <option value="City Explore Trip">City Explore Trip</option>
-        <option value="Jacuzzi">Jacuzzi</option>
-    </select>
-
-    <label for="00NNS00001ip1pp">Jumlah Tamu</label>
-    <input id="00NNS00001ip1pp" name="00NNS00001ip1pp" type="number" min="1">
-
-    <br><br>
-    <input type="submit" value="Submit">
-</form>
+            <button type="submit">Submit Booking</button>
+        </form>
+    </div>
 
 </body>
 </html>
