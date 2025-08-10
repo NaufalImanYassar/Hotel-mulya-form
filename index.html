@@ -77,12 +77,12 @@
 <body>
 
     <div class="container">
-        <img src="logo.png" alt="Hotel Mulya Logo" class="logo">
+        <img src="hotel-mulya-logo.png" alt="Hotel Mulya Logo" class="logo">
         <h2>Hotel Mulya Booking Form</h2>
 
         <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
 
-            <!-- Ganti dengan Salesforce Org ID -->
+            <!-- Salesforce hidden fields -->
             <input type="hidden" name="oid" value="YOUR_SALESFORCE_ORG_ID">
             <input type="hidden" name="retURL" value="https://thankyou.example.com">
 
@@ -106,6 +106,22 @@
 
             <label for="check_out">Check Out Date</label>
             <input type="date" id="check_out" name="Check_out_Date__c" required>
+
+            <label for="product_interest">Product Interest</label>
+            <select id="product_interest" name="Product_Interest__c" multiple size="4" required>
+                <option value="Deluxe Room">Deluxe Room</option>
+                <option value="Suite Room">Suite Room</option>
+                <option value="Presidential Suite">Presidential Suite</option>
+                <option value="Meeting Room">Meeting Room</option>
+            </select>
+
+            <label for="add_on_facility">Add-On Facility</label>
+            <select id="add_on_facility" name="Add_On_Facility__c" multiple size="4">
+                <option value="Airport Pickup">Airport Pickup</option>
+                <option value="Breakfast">Breakfast</option>
+                <option value="Spa Package">Spa Package</option>
+                <option value="Extra Bed">Extra Bed</option>
+            </select>
 
             <label for="any_request">Any Special Request</label>
             <textarea id="any_request" name="Any_Request_Needed__c" rows="4" placeholder="Write your request here..."></textarea>
