@@ -94,7 +94,7 @@
         </div>
 
         <div class="full">
-          <label for="product_interest">Product Interest</label>
+          <label for="product_interest">Choose Your Package</label>
           <select id="product_interest" name="Product_Interest__c" multiple>
             <option value="Ballroom">Ballroom</option>
             <option value="Resto Buffet">Resto Buffet</option>
@@ -126,12 +126,12 @@
         </div>
 
         <div>
-          <label for="check_in">Check In Date (dd/mm/yyyy)</label>
-          <input id="check_in" name="00NNS00001imwfl" type="text" placeholder="dd/mm/yyyy" pattern="\d{2}/\d{2}/\d{4}">
+          <label for="check_in">Check In Date (dd/mm/yyyy) *</label>  
+          <input id="check_in" name="00NNS00001imwfl" type="text" placeholder="dd/mm/yyyy" pattern="\d{2}/\d{2}/\d{4}" required>
         </div>
         <div>
-          <label for="check_out">Check Out Date (dd/mm/yyyy)</label>
-          <input id="check_out" name="00NNS00001imPSL" type="text" placeholder="dd/mm/yyyy" pattern="\d{2}/\d{2}/\d{4}">
+          <label for="check_out">Check Out Date (dd/mm/yyyy) *</label>
+          <input id="check_out" name="00NNS00001imPSL" type="text" placeholder="dd/mm/yyyy" pattern="\d{2}/\d{2}/\d{4}" required>
         </div>
 
         <!-- Address Fields -->
@@ -167,3 +167,8 @@
   </div>
 </body>
 </html>
+
+
+
+
+
